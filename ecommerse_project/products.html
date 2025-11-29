@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artistry | Products</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  
+  <header>
+    <div class="logo">Artistry</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  
+  <section class="products">
+    <h2>Our Products</h2>
+
+    
+    <div class="product-card">
+      <img src="art1.jpg" alt="Dreamy Wall Print">
+      <h3>Dreamy Wall Print</h3>
+      <p>₹500</p>
+      <button onclick="addToCart('Dreamy Wall Print', 500, 'images/art1.jpg')">
+        Add to Cart
+      </button>
+    </div>
+
+    
+    <div class="product-card">
+      <img src="art2.jpeg" alt="Indian Art">
+      <h3>Indian Art</h3>
+      <p>₹300</p>
+      <button onclick="addToCart('Indian Art', 300, 'images/art2.jpeg')">
+        Add to Cart
+      </button>
+    </div>
+
+    
+    <div class="product-card">
+      <img src="art3.jpeg" alt="Van Gogh Style Print">
+      <h3>Van Gogh Style Print</h3>
+      <p>₹1000</p>
+      <button onclick="addToCart('Van Gogh Style Print', 1000, 'images/art3.jpeg')">
+        Add to Cart
+      </button>
+    </div>
+
+  </section>
+
+  
+  <footer>
+    <p>© 2025 Artistry. All rights reserved.</p>
+  </footer>
+
+  
+  <script>
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, price, image });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    }
+  </script>
+
+</body>
+</html>
